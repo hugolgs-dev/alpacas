@@ -2,13 +2,16 @@
 
 // |-_-_-_-|- IMPORTS -|_-_-_-_-_-_-_-_-_-_-_-_-_|
 import gleam/int
+
+// |-_-_-_-|- TYPES -|_-_-_-_-_-_-_-_-_-_-_-_-_|
+
 /// A mathematical expression, represented as a tree.
 pub type Expr {
   /// An integer constant, e.g `3`
   Num(Int)
   /// A variable, e.g `x`
   Var(String)
-  /// The sum of two expressions
+  /// The sum of two exUpdate .gitignore to include the notes/ directorypressions
   Add(Expr, Expr)
   /// The product of two expressions
   Mul(Expr, Expr)
@@ -32,7 +35,7 @@ pub fn to_string(expr: Expr) -> String {
 //
 fn precedence(expr: Expr) -> Int {
   case expr {
-    Num(_) | Var(_)->4
+    Num(_) | Var(_) -> 4
     Pow(_, _) -> 3
     Mul(_, _) -> 2
     Add(_, _) -> 1

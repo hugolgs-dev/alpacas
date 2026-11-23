@@ -1,5 +1,5 @@
+import alpacas.{Add, Mul, Num, Pow, Var}
 import gleeunit
-import alpacas.{Num, Var, Add, Mul, Pow}
 
 pub fn main() -> Nil {
   gleeunit.main()
